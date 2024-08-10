@@ -8,7 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 export default function Home() {
   return (
     <ScrollArea className="h-[100vh]">
-      <div className="bg-black flex flex-col p-12 gap-5">
+      <div className="bg-[#0D0D0F] flex flex-col px-52 py-12 gap-2">
         {/* Header */}
 
         <HeaderComponent />
