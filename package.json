@@ -12,6 +12,7 @@
     "@radix-ui/react-scroll-area": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.42.0",
     "json-loader": "^0.5.7",
     "lucide-react": "^0.416.0",
     "next": "14.2.5",
@@ -19,7 +20,8 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.185.0"
   },
   "devDependencies": {
     "postcss": "^8",

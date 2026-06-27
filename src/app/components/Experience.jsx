@@ -1,66 +1,104 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
-import TimeLineComponent from "./TimelineComponent";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import data from ".././data/profile.json";
+import data from "../data/profile.json";
 
 export default function Experience() {
+  const [active, setActive] = useState(0);
+  const exp = data.experiences[active];
+
   return (
-    <div className="flex w-full h-[50vh] gap-5">
-      {/* Experience Representation*/}
+    <motion.section
+      id="experience"
+      className="w-full rounded-[22px] bg-[#18181B]/45 border border-white/5 overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-80px" }}
+    >
+      {/* Tab bar */}
+      <div className="flex border-b border-white/8">
+        {data.experiences.map((e, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActive(idx)}
+            className={`relative flex-1 px-6 py-5 text-left transition-all duration-200 ${
+              active !== idx ? "hover:bg-white/[0.03]" : ""
+            }`}
+          >
+            <span
+              className={`block text-[14px] font-semibold leading-snug transition-colors duration-200 ${
+                active === idx ? "text-white" : "text-white/35"
+              }`}
+            >
+              {e.name}
+            </span>
+            <span
+              className={`block text-[12px] mt-1 transition-colors duration-200 ${
+                active === idx ? "text-[#12825F]" : "text-white/25"
+              }`}
+            >
+              {e.company} &middot; {e.duration}
+            </span>
 
-      <div className="flex gap-10 flex-col w-1/3 p-8 rounded-[18px] bg-[#18181B]/45">
-        <div className="flex gap-5 items-center">
-          <span className="block text-white text-2xl font-semibold">
-            Experience
-          </span>
-          <span className="block text-white px-3 py-2 bg-[#12825F] rounded-full">
-            {data.timeLineDuration} Years
-          </span>
-        </div>
-
-        {/* Timeline */}
-        <div>
-          <TimeLineComponent data={data.experiences} />
-        </div>
+            {active === idx && (
+              <motion.div
+                layoutId="tab-line"
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#12825F]"
+                transition={{ type: "spring", stiffness: 500, damping: 40 }}
+              />
+            )}
+          </button>
+        ))}
       </div>
 
-      {/* Experience Description */}
-      <div className="flex flex-col w-2/3 p-8 gap-6 rounded-[18px] bg-[#18181B]/45">
-        <span className="block text-white text-2xl font-semibold">
-          Professional Experience
-        </span>
-        <ScrollArea className="max-h-[35vh]">
-          <div className="flex flex-col gap-12">
-            {data.experiences.map((each, idx) => (
-              <div>
-                <div className="flex flex-col gap-2 pb-2">
-                  <div className="flex gap-3 items-center">
-                    <span className="text-white block text-base font-medium">
-                      {each.name}
-                    </span>
-                    <span className="text-white text-sm px-3 py-2 bg-[#212125] rounded-full">
-                      {each.duration}
-                    </span>
-                  </div>
-                  <span className="font-normal text-xs py-2 text-[#C3C3C3]">
-                    {each.location}
-                  </span>
-                </div>
-                <div className="flex flex-col gap-3">
-                  {each.details.map((detail, idx) => (
-                    <div className="flex gap-2">
-                      <FaCheck className="text-[#12825F] size-5 shrink-0" />
-                      <span className="text-xs font-normal text-[#C3C3C3]">
-                        {detail}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+      {/* Content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={active}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -14 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="px-10 py-8"
+        >
+          {/* Role header */}
+          <div className="mb-7">
+            <h2 className="text-[20px] font-bold text-white tracking-tight">
+              {exp.name}
+            </h2>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 items-center mt-2">
+              <span className="text-[14px] font-medium text-[#12825F]">
+                @ {exp.company}
+              </span>
+              <span className="text-white/25 text-[14px]">·</span>
+              <span className="text-white/55 text-[14px]">{exp.duration}</span>
+              <span className="text-white/25 text-[14px]">·</span>
+              <span className="text-white/40 text-[12px]">{exp.location}</span>
+            </div>
+          </div>
+
+          {/* Bullet points */}
+          <div className="flex flex-col gap-4">
+            {exp.details.map((detail, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.28, delay: i * 0.04, ease: "easeOut" }}
+                className="flex gap-4 items-start"
+              >
+                <FaCheck className="text-[#12825F] size-3.5 shrink-0 mt-[3px]" />
+                <span className="text-[13px] font-normal text-[#C3C3C3] leading-[1.7]">
+                  {detail}
+                </span>
+              </motion.div>
             ))}
           </div>
-        </ScrollArea>
-      </div>
-    </div>
+        </motion.div>
+      </AnimatePresence>
+    </motion.section>
   );
 }

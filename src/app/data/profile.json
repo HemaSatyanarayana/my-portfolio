@@ -1,50 +1,55 @@
 {
-  "name": "Yashwanth Reddy ",
-  "role": "Backend Developer",
-  "totalExperienceInYears": "1.1",
-  "experiences": [
+  "name": "Hema \n Satyanarayana",
+  "role": "Senior Software Engineer",
+  "totalExperienceInYears": "3.5",
+  "avatar": "profile.jpeg",
+  "intro": {
+    "greeting": "Hi, there!",
+    "techTags": ["JavaScript", "TypeScript", "React", "Node.js", "Go", "Python"]
+  },
+  "contact": {
+    "phone": "+91 7893273700",
+    "email": "hemasatyanarayan113@gmail.com",
+    "linkedin": "hema-satyanarayana-bokka",
+    "github": "HemaSatyanarayana"
+  },
+  "skills": ["React", "TypeScript", "Node.js", "Kafka", "Docker", "PostgreSQL"],
+  "features": [
     {
-      "name": "Software Engineer",
-      "duration": "Aug 2023 - Current",
-      "timeLineDuration": "2023-24",
-      "location": "Kondapur, Hyderabad",
-      "description": "Backend Developer",
-      "details": [
-        "Currently working on building an event streaming data layer and analytics engine for a client that includes high throughput data pipeline (Kafka, Golang Microservices and Spark Jobs) and OLAP cube (Click-house with Star Schema) for efficient analytic queries. Currently working on building an event streaming data layer and analytics engine for a client that includes high throughput data pipeline (Kafka, Golang Microservices and Spark Jobs) and OLAP cube (Click-house with Star Schema) for efficient analytic queries",
-        "Proficient in Golang and Scala. Developed production-ready microservices in Golang and actively participated in maintaining and enhancing existing Scala services through bug fixes and API features development"
-      ]
+      "title": "Configuration Error Intelligence",
+      "description": "Surfaces misconfigured campaign settings in a unified view and navigates users directly to the offending field with an in-context highlight — eliminating the need to understand SDK contracts or engineering terminology, and cutting support escalations for non-technical operators.",
+      "image": "ErrorHandling.gif",
+      "flip": false
     },
     {
-      "name": "Software Engineer Intern",
-      "duration": "Jan 2023 - Aug 2023",
-      "timeLineDuration": "2023-23",
-      "location": "Kondapur, Hyderabad",
-      "description": "Software Engineer Intern",
-      "details": [
-        "Develop and maintain APIs: Create and maintain RESTful APIs for web and mobile applications using technologies such as Node.js, Express, and MongoDB.",
-        "Code reviews and testing: Participate in code reviews and write unit tests to ensure code quality and maintainability.",
-        "Performance optimization: Optimize backend code for performance and scalability, including caching, load balancing, and other techniques."
-      ]
+      "title": "Event Sanity — Live SDK Debugger",
+      "description": "Reduced campaign debugging time by 92% by delivering a self-serve, real-time stream of mobile and SDK event logs inside the platform — enabling business and QA teams to validate event sequences, inspect payloads, and catch misconfigurations before production, with zero developer involvement.",
+      "image": "EventSanity.png",
+      "flip": true
+    },
+    {
+      "title": "Design Editor UI",
+      "description": "Replaced a form-heavy, developer-assisted campaign workflow with a Figma-inspired visual editor — giving marketers direct control over typography, layout, and design tokens to ship polished, on-brand experiences independently, measurably improving customer satisfaction and cutting campaign iteration time from days to hours.",
+      "image": "Treeview.png",
+      "flip": false
     }
   ],
-  "projects": [
+  "education": [
     {
-      "name": "Easy Deploy Scheduler",
-      "duration": "Jan 2023 - Feb 2023",
-      "location": "San Francisco, CA",
-      "details": [
-        "An easy deploy scheduler that allows you to schedule your deployments with a simple and easy-to-use interface. It supports multiple deployment strategies, including rolling updates, blue-green deployments, and canary releases.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-      ]
+      "name": "B.Tech in ECE",
+      "institution": "SRKR Engineering College",
+      "duration": "2019 - 2023",
+      "timeLineDuration": "2019-23",
+      "location": "Bhimavaram, AP",
+      "description": "CGPA: 7.6 / 10"
     },
     {
-      "name": "Easy Deploy Scheduler",
-      "duration": "Jan 2023 - Feb 2023",
-      "location": "San Francisco, CA",
-      "details": [
-        "An easy deploy scheduler that allows you to schedule your deployments with a simple and easy-to-use interface. It supports multiple deployment strategies, including rolling updates, blue-green deployments, and canary releases.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor."
-      ]
+      "name": "Board of Intermediate",
+      "institution": "Aditya Junior College",
+      "duration": "2017 - 2019",
+      "timeLineDuration": "2017-19",
+      "location": "Narsapur, AP",
+      "description": "Score: 981 / 1000"
     }
   ]
 }
