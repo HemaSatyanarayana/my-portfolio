@@ -5,6 +5,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import HeaderComponent from "./components/HeaderComponent";
 import Introduction from "./components/Introduction";
 import Globe from "./components/Globe";
+import VortexTypography from "./components/VortexTypography";
+import SkillBubbles from "./components/SkillBubbles";
 import FeatureSection from "./components/FeatureSection";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
@@ -21,7 +23,8 @@ const HATCH = {
 };
 
 const INTERSECTION_HATCH = {
-  backgroundImage: "repeating-linear-gradient(45deg, #374151 0, #374151 1px, transparent 1px, transparent 5px)",
+  backgroundImage:
+    "repeating-linear-gradient(45deg, #374151 0, #374151 1px, transparent 1px, transparent 5px)",
   backgroundSize: "5px 5px",
 };
 
@@ -42,8 +45,26 @@ function EndDivider({ side }) {
   const topCorners = (
     // Pair-gap strips only: left gap (25% → 25%+32px) and right gap (75%-32px → 75%)
     <div className="relative h-[40px] hidden md:block">
-      <div style={{ position: "absolute", left: "25%", width: 32, top: 0, bottom: 0, ...INTERSECTION_HATCH }} />
-      <div style={{ position: "absolute", right: "25%", width: 32, top: 0, bottom: 0, ...INTERSECTION_HATCH }} />
+      <div
+        style={{
+          position: "absolute",
+          left: "25%",
+          width: 32,
+          top: 0,
+          bottom: 0,
+          ...INTERSECTION_HATCH,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          right: "25%",
+          width: 32,
+          top: 0,
+          bottom: 0,
+          ...INTERSECTION_HATCH,
+        }}
+      />
     </div>
   );
   const botCorners = (
@@ -51,12 +72,44 @@ function EndDivider({ side }) {
       <div className="w-[25%] h-full" style={HATCH} />
       <div className="flex-1" />
       <div className="w-[25%] h-full" style={HATCH} />
-      <div style={{ position: "absolute", left: "25%", width: 32, top: 0, bottom: 0, ...INTERSECTION_HATCH }} />
-      <div style={{ position: "absolute", left: "calc(75% - 32px)", width: 32, top: 0, bottom: 0, ...INTERSECTION_HATCH }} />
+      <div
+        style={{
+          position: "absolute",
+          left: "25%",
+          width: 32,
+          top: 0,
+          bottom: 0,
+          ...INTERSECTION_HATCH,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: "calc(75% - 32px)",
+          width: 32,
+          top: 0,
+          bottom: 0,
+          ...INTERSECTION_HATCH,
+        }}
+      />
     </div>
   );
   const line = <div className="w-full border-t border-gray-800" />;
-  return <div>{isTop ? <>{topCorners}{line}</> : <>{line}{botCorners}</>}</div>;
+  return (
+    <div>
+      {isTop ? (
+        <>
+          {topCorners}
+          {line}
+        </>
+      ) : (
+        <>
+          {line}
+          {botCorners}
+        </>
+      )}
+    </div>
+  );
 }
 
 // Content-width separator — aligns with the inner content padding, not the full layout
@@ -92,14 +145,25 @@ function TechStack() {
       </span>
       <div className="w-full max-w-[560px] h-[350px] md:h-[500px]">
         <Globe skills={data.skills} />
+        {/* <VortexTypography skills={data.skills} /> */}
+        {/* <SkillBubbles skills={data.skills} experiences={data.experiences} /> */}
       </div>
     </div>
   );
 }
 
 const SECTIONS = [
-  { id: "about",     Component: () => <Introduction name={data.name} role={data.role} avatar={IMAGES[data.avatar]} /> },
-  { id: "skills",    Component: TechStack },
+  {
+    id: "about",
+    Component: () => (
+      <Introduction
+        name={data.name}
+        role={data.role}
+        avatar={IMAGES[data.avatar]}
+      />
+    ),
+  },
+  { id: "skills", Component: TechStack },
   ...data.experiences.map((exp, i) => ({
     id: `experience-${i + 1}`,
     Component: () => (
@@ -113,7 +177,7 @@ const SECTIONS = [
     ),
   })),
   { id: "education", Component: Education },
-  { id: "contact",   Component: Contact },
+  { id: "contact", Component: Contact },
 ];
 
 export default function Home() {

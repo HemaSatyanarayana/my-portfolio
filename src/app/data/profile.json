@@ -60,7 +60,7 @@
     },
     {
       "title": "Design Editor UI",
-      "description": "Replaced a developer-assisted campaign workflow with a Figma-inspired visual editor, giving marketers direct control over design tokens and cutting campaign iteration time from days to hours.",
+      "description": "Built config-driven UI support for the WebSDK that maps structured campaign configuration to individual UI elements in real time — enabling operators to control typography, layout, and interactions per component without code changes or developer involvement.",
       "image": "Treeview.png",
       "flip": true
     },
