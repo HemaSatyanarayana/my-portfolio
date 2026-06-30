@@ -13,25 +13,68 @@
     "linkedin": "hema-satyanarayana-bokka",
     "github": "HemaSatyanarayana"
   },
-  "skills": ["React", "TypeScript", "Node.js", "Kafka", "Docker", "PostgreSQL"],
-  "features": [
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "Python",
+    "Go",
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "PostgreSQL",
+    "ClickHouse",
+    "Kafka",
+    "TailwindCSS",
+    "ShadCN",
+    "Zustand",
+    "Tanstack Query",
+    "LLM",
+    "GenAI",
+    "RAG",
+    "Agentic AI",
+    "Docker",
+    "Git",
+    "Qdrant"
+  ],
+  "experiences": [
+    {
+      "title": "Full-Stack Feature Ownership",
+      "description": "Led a 4-member team with end-to-end ownership across React, Node.js/Go APIs, and data layers — scoping, building, and shipping full-stack features from design handoff to production.",
+      "image": "TeamOwnership.svg",
+      "flip": false
+    },
+    {
+      "title": "RAG-Powered Onboarding Chat",
+      "description": "Built a RAG-powered onboarding chat using Qdrant and LLMs that lets customers query product documentation conversationally — reducing time-to-first-value and cutting inbound support dependency.",
+      "image": "RagChat.svg",
+      "flip": true
+    },
+    {
+      "title": "Event Sanity — Live SDK Debugger",
+      "description": "Delivered a real-time SDK event debugger over Kafka, reducing campaign debugging time by 92% and enabling QA and business teams to validate event sequences without engineering involvement.",
+      "image": "EventSanity.png",
+      "flip": false
+    },
+    {
+      "title": "Design Editor UI",
+      "description": "Replaced a developer-assisted campaign workflow with a Figma-inspired visual editor, giving marketers direct control over design tokens and cutting campaign iteration time from days to hours.",
+      "image": "Treeview.png",
+      "flip": true
+    },
     {
       "title": "Configuration Error Intelligence",
-      "description": "Surfaces misconfigured campaign settings in a unified view and navigates users directly to the offending field with an in-context highlight — eliminating the need to understand SDK contracts or engineering terminology, and cutting support escalations for non-technical operators.",
+      "description": "Built a configuration error intelligence layer that navigates operators directly to misconfigured fields with in-context highlights — eliminating SDK knowledge requirements and reducing support escalations.",
       "image": "ErrorHandling.gif",
       "flip": false
     },
     {
-      "title": "Event Sanity — Live SDK Debugger",
-      "description": "Reduced campaign debugging time by 92% by delivering a self-serve, real-time stream of mobile and SDK event logs inside the platform — enabling business and QA teams to validate event sequences, inspect payloads, and catch misconfigurations before production, with zero developer involvement.",
-      "image": "EventSanity.png",
+      "title": "Analytics Event Pipelines",
+      "description": "Designed ClickHouse-backed event pipelines for high-volume ingestion and fast time-series aggregation powering real-time campaign performance dashboards.",
+      "image": "EventPipeline.svg",
       "flip": true
-    },
-    {
-      "title": "Design Editor UI",
-      "description": "Replaced a form-heavy, developer-assisted campaign workflow with a Figma-inspired visual editor — giving marketers direct control over typography, layout, and design tokens to ship polished, on-brand experiences independently, measurably improving customer satisfaction and cutting campaign iteration time from days to hours.",
-      "image": "Treeview.png",
-      "flip": false
     }
   ],
   "education": [

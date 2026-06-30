@@ -4,25 +4,19 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { CSS2DRenderer, CSS2DObject } from "three/addons/renderers/CSS2DRenderer.js";
 
-const SKILLS = [
-  "JavaScript", "TypeScript", "HTML", "CSS", "Python", "Go",
-  "React", "Node.js", "Express.js", "MongoDB", "PostgreSQL",
-  "ClickHouse", "Kafka", "TailwindCSS", "Docker", "Git", "Qdrant",
-];
-
 function fibonacciSphere(n) {
   const pts = [];
   const phi = Math.PI * (3 - Math.sqrt(5));
+  const yMax = 0.75;
   for (let i = 0; i < n; i++) {
-    // +0.5 offset ensures no point ever lands exactly at the poles
-    const y = 1 - ((i + 0.5) / n) * 2;
+    const y = (1 - ((i + 0.5) / n) * 2) * yMax;
     const r = Math.sqrt(1 - y * y);
     pts.push(new THREE.Vector3(Math.cos(phi * i) * r, y, Math.sin(phi * i) * r));
   }
   return pts;
 }
 
-export default function Globe() {
+export default function Globe({ skills = [] }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -120,10 +114,10 @@ export default function Globe() {
     }
 
     // Skill labels distributed evenly on the sphere surface
-    const positions = fibonacciSphere(SKILLS.length);
+    const positions = fibonacciSphere(skills.length);
     const labelDivs = [];
 
-    SKILLS.forEach((skill, i) => {
+    skills.forEach((skill, i) => {
       const div = document.createElement("div");
       div.textContent = skill;
       Object.assign(div.style, {
@@ -144,7 +138,7 @@ export default function Globe() {
       labelDivs.push(div);
 
       const obj = new CSS2DObject(div);
-      obj.position.copy(positions[i].clone().multiplyScalar(1.28));
+      obj.position.copy(positions[i].clone().multiplyScalar(1.05));
       globe.add(obj);
     });
 
@@ -191,12 +185,12 @@ export default function Globe() {
       if (el.contains(renderer.domElement)) el.removeChild(renderer.domElement);
       if (el.contains(labelRenderer.domElement)) el.removeChild(labelRenderer.domElement);
     };
-  }, []);
+  }, [skills]);
 
   return (
     <div
       ref={containerRef}
-      style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden" }}
+      style={{ width: "100%", height: "100%", position: "relative" }}
     />
   );
 }

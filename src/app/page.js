@@ -86,12 +86,12 @@ function SectionWrapper({ id, children }) {
 
 function TechStack() {
   return (
-    <div className="w-full flex flex-col items-center gap-3">
+    <div className="w-full flex flex-col items-center gap-3 my-5">
       <span className="text-white/30 text-[12px] tracking-[0.25em] uppercase font-medium">
         Tech Stack
       </span>
-      <div className="w-full max-w-[560px] h-[420px] md:h-[520px]">
-        <Globe />
+      <div className="w-full max-w-[560px] h-[350px] md:h-[500px]">
+        <Globe skills={data.skills} />
       </div>
     </div>
   );
@@ -100,15 +100,15 @@ function TechStack() {
 const SECTIONS = [
   { id: "about",     Component: () => <Introduction name={data.name} role={data.role} avatar={IMAGES[data.avatar]} /> },
   { id: "skills",    Component: TechStack },
-  ...data.features.map((feature, i) => ({
-    id: `feature-${i + 1}`,
+  ...data.experiences.map((exp, i) => ({
+    id: `experience-${i + 1}`,
     Component: () => (
       <FeatureSection
-        title={feature.title}
-        description={feature.description}
-        image={IMAGES[feature.image]}
-        imageAlt={feature.title}
-        flip={feature.flip}
+        title={exp.title}
+        description={exp.description}
+        image={exp.image ? IMAGES[exp.image] : null}
+        imageAlt={exp.title}
+        flip={exp.flip}
       />
     ),
   })),

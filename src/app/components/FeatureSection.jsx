@@ -50,21 +50,23 @@ export default function FeatureSection({ title, description, image, imageAlt, fl
           <p className="text-white/50 text-[13.5px] md:text-[14px] leading-relaxed">{description}</p>
         </div>
 
-        <div className="flex-1 flex items-center justify-center">
-          <div
-            className="relative w-full max-w-[420px] rounded-xl overflow-hidden border border-white/8 shadow-[0_0_40px_rgba(0,0,0,0.5)] cursor-zoom-in hover:border-white/20 transition-colors duration-200"
-            onClick={() => setZoomed(true)}
-          >
-            <Image
-              src={image}
-              alt={imageAlt}
-              width={420}
-              height={260}
-              className="w-full h-auto object-cover"
-              unoptimized
-            />
+        {image && (
+          <div className="flex-1 flex items-center justify-center">
+            <div
+              className="relative w-full max-w-[420px] rounded-xl overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] cursor-zoom-in transition-colors duration-200"
+              onClick={() => setZoomed(true)}
+            >
+              <Image
+                src={image}
+                alt={imageAlt}
+                width={420}
+                height={260}
+                className="w-full h-auto object-cover"
+                unoptimized
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {zoomed && typeof document !== "undefined" && (

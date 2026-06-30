@@ -1,0 +1,48 @@
+<svg width="1200" height="1000" viewBox="0 0 1200 1000" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="rc-bg" x1="0" y1="0" x2="1200" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E6FE0"/>
+      <stop offset="0.55" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#7BA8FF"/>
+    </linearGradient>
+    <radialGradient id="rc-glow" cx="0.15" cy="0.1" r="0.9">
+      <stop offset="0" stop-color="#CFE0FF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#CFE0FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="rc-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="30" flood-color="#0b2a5e" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1000" fill="url(#rc-bg)"/>
+  <rect width="1200" height="1000" fill="url(#rc-glow)"/>
+  <text x="70" y="135" font-size="42" font-weight="800" fill="#BFD6FF" letter-spacing="2">RAG · POWERED</text>
+  <text x="70" y="225" font-size="78" font-weight="800" fill="#FFFFFF" letter-spacing="-2">Onboarding Chat</text>
+  <rect x="70" y="280" width="1060" height="650" rx="22" fill="#FFFFFF" filter="url(#rc-shadow)"/>
+  <circle cx="118" cy="332" r="18" fill="#12825F"/>
+  <path d="M110 332 l5 6 l10 -12" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="328" font-size="24" font-weight="700" fill="#0F172A">Product Assistant</text>
+  <text x="148" y="352" font-size="16" fill="#12825F">● online · grounded in docs</text>
+  <line x1="100" y1="378" x2="1100" y2="378" stroke="#EEF1F5" stroke-width="2"/>
+  <rect x="560" y="410" width="500" height="78" rx="18" fill="#2563EB"/>
+  <text x="588" y="445" font-size="20" font-weight="500" fill="#FFFFFF">How do I set up my first</text>
+  <text x="588" y="472" font-size="20" font-weight="500" fill="#FFFFFF">campaign and go live?</text>
+  <circle cx="1085" cy="420" r="16" fill="#1E3A8A"/>
+  <text x="1085" y="426" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">U</text>
+  <rect x="140" y="520" width="300" height="36" rx="18" fill="#F1F5F9"/>
+  <circle cx="166" cy="538" r="7" fill="#8B5CF6"/>
+  <text x="182" y="544" font-size="15" font-weight="600" fill="#475569">Retrieved 4 chunks · Qdrant</text>
+  <rect x="140" y="572" width="640" height="232" rx="18" fill="#F0FBF6" stroke="#CBEBDD" stroke-width="2"/>
+  <text x="170" y="612" font-size="20" fill="#0F172A" font-weight="600">Welcome! Here's the quickest path:</text>
+  <text x="170" y="650" font-size="18" fill="#334155">1. Create a project from the dashboard</text>
+  <text x="170" y="684" font-size="18" fill="#334155">2. Connect your SDK with the API key</text>
+  <text x="170" y="718" font-size="18" fill="#334155">3. Define a target audience &amp; design</text>
+  <text x="170" y="752" font-size="18" fill="#334155">4. Hit Publish — you're live 🎉</text>
+  <rect x="170" y="768" width="150" height="26" rx="13" fill="#E6F6EF"/>
+  <text x="185" y="786" font-size="13" font-weight="600" fill="#12825F">📄 quickstart.md</text>
+  <rect x="332" y="768" width="150" height="26" rx="13" fill="#E6F6EF"/>
+  <text x="347" y="786" font-size="13" font-weight="600" fill="#12825F">📄 sdk-setup.md</text>
+  <rect x="140" y="838" width="920" height="56" rx="28" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="172" y="873" font-size="18" fill="#94A3B8">Ask anything about the product…</text>
+  <circle cx="1030" cy="866" r="22" fill="#2563EB"/>
+  <path d="M1021 866 h16 m-6 -6 l6 6 l-6 6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
